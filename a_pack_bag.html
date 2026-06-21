@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pack The Bag — Daily Life PKU</title>
+    <link rel="stylesheet" href="styles_pack-bag.css">
+</head>
+<body>
+
+    <img src="s_blub_svg.svg"  alt="" class="bg-shape bg-green">
+    <img src="s_blub_svg3.svg" alt="" class="bg-shape bg-green2">
+    <img src="cloud1.png" alt="" class="cloud cloud-1">
+    <img src="cloud2.png" alt="" class="cloud cloud-2">
+
+    <section class="game-section">
+
+        <div class="star star-1">★</div>
+        <div class="star star-2">★</div>
+        <div class="star star-3">★</div>
+        <div class="star star-4">★</div>
+        <div class="star star-5">★</div>
+        <div class="star star-6">★</div>
+        <div class="star star-7">★</div>
+        <div class="star star-8">★</div>
+        <div class="star star-9">★</div>
+
+        <!-- Title -->
+        <div class="group group-title fade-up" data-delay="0">
+            <h1>Help Mika pack his PKU bag!</h1>
+            <p class="subtitle">Drag only the PKU items into Mika's bag.</p>
+        </div>
+
+        <!-- Mika left side -->
+        <div class="group group-mika slide-left bob" data-delay="200">
+            <div class="speech green">
+                I need my PKU things before I go to school. Can you help me pack?
+            </div>
+            <img src="p_mika-thinking.png" alt="Mika" class="mika-img">
+        </div>
+
+        <!-- ============================================
+             ITEMS IN THE MIDDLE
+             Some are correct PKU items, some are distractors.
+             data-correct="true" marks the ones that belong.
+        ============================================= -->
+        <div class="group group-items fade-up" data-delay="500">
+
+            <div class="pack-item correct" draggable="true"
+                 data-item="formula" data-correct="true">
+                <span class="item-emoji">🧃</span>
+                <span class="item-label">PKU Formula</span>
+            </div>
+
+            <div class="pack-item correct" draggable="true"
+                 data-item="low-protein-snack" data-correct="true">
+                <span class="item-emoji">🍎</span>
+                <span class="item-label">Low-Protein Snack</span>
+            </div>
+
+            <div class="pack-item correct" draggable="true"
+                 data-item="pku-card" data-correct="true">
+                <span class="item-emoji">💳</span>
+                <span class="item-label">PKU Info Card</span>
+            </div>
+
+            <div class="pack-item correct" draggable="true"
+                 data-item="water-bottle" data-correct="true">
+                <span class="item-emoji">💧</span>
+                <span class="item-label">Water Bottle</span>
+            </div>
+
+            <!-- Distractors — wrong items -->
+            <div class="pack-item distractor" draggable="true"
+                 data-item="chocolate" data-correct="false">
+                <span class="item-emoji">🍫</span>
+                <span class="item-label">Chocolate</span>
+            </div>
+
+            <div class="pack-item distractor" draggable="true"
+                 data-item="sandwich" data-correct="false">
+                <span class="item-emoji">🥪</span>
+                <span class="item-label">Regular Sandwich</span>
+            </div>
+
+            <div class="pack-item distractor" draggable="true"
+                 data-item="crisps" data-correct="false">
+                <span class="item-emoji">🥨</span>
+                <span class="item-label">Crisps</span>
+            </div>
+
+        </div>
+
+        <!-- ============================================
+             THE BAG — a large drop zone on the right
+        ============================================= -->
+        <div class="group group-bag slide-right" data-delay="400">
+            <div class="bag-drop" id="bagDrop">
+                <img src="p_mika_bag.png" alt="Bag Icon" class="bag-icon">
+                <p class="bag-hint">Drop PKU items here</p>
+            </div>
+            <!-- Items dropped into bag appear in this list -->
+            <div class="bag-contents" id="bagContents"></div>
+        </div>
+
+        <p class="feedback" id="feedback"></p>
+
+        <div class="group group-buttons fade-up" data-delay="1000">
+            <button class="check-btn" id="checkBtn">Check Bag</button>
+            <button class="retry-btn" id="retryBtn">Try Again</button>
+            <a href="a_explain-it.html" class="next-btn disabled" id="nextBtn">Next Game</a>
+        </div>
+
+        <!-- Phen right side, below bag -->
+        <div class="group group-cat slide-right bob" data-delay="800">
+            <div class="speech orange">
+                Remember — only PKU-safe items in the bag!
+            </div>
+            <img src="phen_pointing.png" alt="" class="cat-img">
+        </div>
+
+    </section>
+
+    <script src="script_pack-bag.js"></script>
+</body>
+</html>

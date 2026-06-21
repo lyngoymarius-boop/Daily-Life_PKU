@@ -1,0 +1,166 @@
+/* ============================================
+   RESET
+============================================= */
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ overflow-x:hidden; font-family:Arial,sans-serif; background:#FBF6E9; }
+
+/* ============================================
+   BACKGROUND + CLOUDS
+============================================= */
+.bg-shape{ position:fixed; z-index:-2; pointer-events:none; }
+.bg-green  { width:450px; top:-100px; left:0; }
+.bg-green2 { width:450px; top:-50px; right:-180px; }
+.bg-pink   { width:550px; bottom:-200px; right:-150px; }
+
+.cloud{ position:fixed; width:350px; height:120px; z-index:-1; }
+.cloud-1{ top:8%;  animation:floatCloud 50s linear infinite; }
+.cloud-2{ top:70%; animation:floatCloud 65s linear infinite; }
+@keyframes floatCloud{
+    from{ transform:translateX(-500px); }
+    to  { transform:translateX(150vw); }
+}
+
+/* ============================================
+   STARS
+============================================= */
+.star{ position:absolute; font-size:4rem; animation:starFloat 4s ease-in-out infinite; z-index:-1; }
+@keyframes starFloat{
+    0%,100%{ transform:translateY(0) rotate(0deg); }
+    50%    { transform:translateY(-15px) rotate(15deg); }
+}
+.star-1 { top:5%;    right:8%;  color:#8B7FD6; animation-delay:0s; }
+.star-2 { top:12%;   right:4%;  color:#D65F5F; animation-delay:-1.5s; }
+.star-3 { top:18%;   right:14%; color:#F4C95D; animation-delay:-2.3s; }
+.star-4 { bottom:10%; left:4%;  color:#D65F5F; animation-delay:-0.7s; }
+.star-5 { bottom:18%; left:10%; color:#D65F5F; animation-delay:-3s; }
+.star-6 { bottom:4%;  left:14%; color:#F4C95D; animation-delay:-1.2s; }
+.star-7 { top:40%;   left:2%;   color:#8B7FD6; animation-delay:-2s; }
+.star-8 { top:60%;   right:6%;  color:#F4C95D; animation-delay:-0.4s; }
+.star-9 { bottom:35%; right:10%; color:#D65F5F; animation-delay:-1.8s; }
+
+/* ============================================
+   LAYOUT
+============================================= */
+.game-section{ position:relative; min-height:100vh; overflow:hidden; }
+.group{ position:absolute; }
+
+/* Mika */
+.group-mika{
+    top:18%; left:4%; width:280px;
+    display:flex; flex-direction:column; align-items:flex-start;
+}
+.mika-img{ width:260px; margin-top:12px; }
+
+/* Title */
+.group-title{
+    top:6%; left:50%; transform:translateX(-50%);
+    width:600px; text-align:left;
+}
+.group-title h1{ font-size:2.5rem; font-weight:800; line-height:1.3; }
+
+/* Cards */
+.group-cards{
+    top:28%; left:50%; transform:translateX(-50%);
+    width:600px; height:180px;
+}
+.task-card{
+    position:absolute;
+    width:130px; height:70px; border-radius:12px;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:1.1rem; text-align:center;
+    cursor:grab;
+    box-shadow:0 4px 10px rgba(0,0,0,.12);
+    transition:transform .15s ease, box-shadow .15s ease;
+    user-select:none;
+}
+.task-card:active{ cursor:grabbing; }
+.pack-bag    { background:#F2A28C; top:0;   left:0; }
+.wake-up     { background:#F6D365; top:60px; left:90px; }
+.formula     { background:#8BD3C7; top:0;   left:230px; }
+.school      { background:#A8B4F0; top:60px; left:320px; }
+.brush-teeth { background:#D6A8E0; top:0;   left:460px; }
+.task-card.dragging{ opacity:.5; transform:scale(1.05); }
+
+/* Slots */
+.group-slots{
+    top:50%; left:50%; transform:translateX(-50%);
+    display:flex; gap:16px;
+}
+.drop-slot{
+    width:130px; height:70px; border-radius:12px;
+    background:rgba(0,0,0,.06);
+    border:2px dashed rgba(0,0,0,.2);
+    transition:background .2s ease, border-color .2s ease;
+}
+.drop-slot.drag-over{ background:rgba(76,175,135,.15); border-color:#4CAF87; }
+.drop-slot .task-card{ position:static; width:100%; height:100%; }
+
+/* Feedback */
+.feedback{
+    position:absolute; top:60%; left:50%; transform:translateX(-50%);
+    font-size:1.2rem; font-weight:700; min-height:32px;
+    text-align:center; width:100%;
+}
+.feedback.correct  { color:#3a9e73; }
+.feedback.incorrect{ color:#E05252; }
+
+/* Buttons */
+.group-buttons{
+    top:68%; left:50%; transform:translateX(-50%);
+    display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
+}
+.check-btn, .retry-btn, .next-btn{
+    border:none; border-radius:14px;
+    padding:14px 28px; font-size:1rem; font-weight:700;
+    cursor:pointer; text-decoration:none;
+    transition:all .2s ease; display:inline-block;
+}
+.check-btn{ background:#FF7748; color:white; }
+.check-btn:hover{ background:#e6663b; transform:translateY(-2px); }
+
+.retry-btn{ background:#F6D365; color:#2c2c2c; }
+.retry-btn:hover{ background:#e0c050; transform:translateY(-2px); }
+
+.next-btn{ background:#6FA2F5; color:white; }
+.next-btn:hover{ background:#5a8de0; transform:translateY(-2px); }
+.next-btn.disabled{ background:#ccc; color:#888; cursor:not-allowed; pointer-events:none; }
+
+/* Phen */
+.group-cat{
+    top:55%; right:4%; width:240px;
+    display:flex; flex-direction:column; align-items:center;
+}
+.cat-img{ width:220px; margin-top:12px; }
+
+/* Clock */
+.group-clock{ top:4%; right:6%; font-size:1.8rem; font-weight:800; }
+
+/* Speech */
+.speech{ padding:16px 24px; border-radius:20px; color:white; font-weight:bold; display:inline-block; }
+.green  { background:#4FAE9C; }
+.orange { background:#FF7748; }
+
+/* ============================================
+   BOB
+============================================= */
+.bob{ animation:bob 3s ease-in-out infinite; animation-delay:1.5s; }
+@keyframes bob{
+    0%,100%{ transform:translateY(0); }
+    50%    { transform:translateY(-10px); }
+}
+
+/* ============================================
+   LOAD ANIMATIONS
+============================================= */
+.fade-up    { opacity:0; transform:translateY(40px); }
+.slide-left { opacity:0; transform:translateX(-100px); }
+.slide-right{ opacity:0; transform:translateX(100px); }
+
+.show{ opacity:1; transform:none; transition:opacity .8s ease, transform .8s ease; }
+
+.group-title.show,
+.group-cards.show,
+.group-slots.show,
+.group-buttons.show{
+    opacity:1; transform:translateX(-50%); transition:opacity .8s ease;
+}

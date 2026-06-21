@@ -1,0 +1,74 @@
+/* styles_find-bag.css */
+@import url("styles_planner.css");
+
+.room-scene{
+    position:absolute;
+    top:22%; left:50%; transform:translateX(-50%);
+    width:800px; height:450px;
+    background:rgba(20,63,54,.089);
+    border-radius:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
+    overflow:hidden;
+}
+
+.item{
+    position:absolute;
+    font-size:4rem;
+    cursor:pointer;
+    transition:transform .4s ease, filter .4s ease;
+}
+.item:hover{ transform:scale(1.08); }
+
+.teddy      { top:80px;   left:120px; }
+.football   { top:260px;  left:180px; }
+.book       { top:70px;   right:160px; }
+.apple      { bottom:70px; right:100px; }
+.pencil     { top:180px;  left:300px; }
+.toy-car    { bottom:100px; left:360px; }
+.headphones { top:140px;  right:250px; }
+.bottle     { bottom:150px; right:280px; }
+
+.bag{ top:200px; right:180px; z-index:1; transform:scale(.85); }
+.bag-found{
+    z-index:100;
+    transform:scale(2) translate(-80px,-50px);
+    filter:drop-shadow(0 10px 20px rgba(0,0,0,.2));
+}
+
+.feedback{
+    position:absolute;
+    top:73%; left:50%; transform:translateX(-50%);
+    font-size:1.4rem; font-weight:700; min-height:40px;
+    text-align:center; width:100%;
+}
+.success { color:#3AA76D; }
+.feedback.incorrect{ color:#E05252; }
+
+.group-buttons{ top:82%; }
+
+.confetti{
+    position:absolute; font-size:2rem;
+    animation:pop 1s ease forwards;
+}
+@keyframes pop{
+    from{ opacity:1; transform:translateY(0) scale(0); }
+    to  { opacity:0; transform:translateY(-120px) scale(1.5); }
+}
+
+/* find-bag specific mika + cat positioning */
+.group-mika{ top:16%; left:2%; width:260px; }
+.mika-img  { width:440px; }
+
+.group-cat { top:50%; right:3%; width:240px; }
+.cat-img   { width:220px; }
+
+/* room-scene overrides the translateX centering .show rule */
+.room-scene.show{
+    opacity:1;
+    transform:translateX(-50%);
+    transition:opacity .8s ease;
+}
+
+.group-title{ top:5%; left:50%; transform:translateX(-50%); width:600px; text-align:center; }
+.group-title h1{ font-size:2.5rem; font-weight:800; }
+.group-title.show{ opacity:1; transform:translateX(-50%); transition:opacity .8s ease; }

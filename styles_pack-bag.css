@@ -1,0 +1,130 @@
+/* styles_pack-bag.css — imports shared planner styles then adds bag-specific rules */
+@import url("styles_planner.css");
+
+/* ============================================
+   ITEMS GRID (centre of page)
+============================================= */
+.group-items{
+    top:22%; left:34%;
+    transform:translateX(-50%);
+    width:380px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.pack-item{
+    background:white;
+    border-radius:16px;
+    padding:16px 12px;
+    text-align:center;
+    cursor:grab;
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    transition:transform .15s ease, box-shadow .15s ease;
+    user-select:none;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:8px;
+    border:3px solid transparent;
+}
+
+/* Correct items get a subtle green border hint */
+.pack-item.correct{ border-color:rgba(76,175,135,.3); }
+
+/* Distractors get a subtle red border hint */
+.pack-item.distractor{ border-color:rgba(224,82,82,.2); }
+
+.pack-item:hover{ transform:scale(1.04); box-shadow:0 8px 20px rgba(0,0,0,.15); }
+.pack-item:active{ cursor:grabbing; }
+.pack-item.dragging{ opacity:.4; }
+
+.item-emoji{ font-size:2.8rem; }
+.item-label{ font-size:0.9rem; font-weight:700; color:#333; }
+
+/* Hide from tray once placed */
+.pack-item.packed{ display:none; }
+
+/* ============================================
+   THE BAG DROP ZONE
+============================================= */
+.group-bag{
+    top:22%; right:4%;
+    width:280px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+}
+
+.bag-drop{
+    width:240px; min-height:240px;
+    background:rgba(255,255,255,.7);
+    border:3px dashed rgba(0,0,0,.2);
+    border-radius:24px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    transition:background .2s ease, border-color .2s ease;
+    padding:16px;
+}
+
+.bag-drop.drag-over{
+    background:rgba(76,175,135,.12);
+    border-color:#4CAF87;
+}
+
+.bag-icon{ font-size:4rem; }
+.bag-hint{ font-size:0.9rem; color:#888; font-weight:600; text-align:center; }
+
+/* Items inside the bag */
+.bag-contents{
+    width:240px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.bag-contents .pack-item{
+    cursor:default;
+    transform:none !important;
+    font-size:0.85rem;
+    padding:10px 12px;
+    flex-direction:row;
+    justify-content:flex-start;
+    border-color:rgba(76,175,135,.4);
+    background:#f0fdf8;
+}
+
+.bag-contents .item-emoji{ font-size:1.6rem; }
+
+/* Wrong item placed in bag — flash red */
+.pack-item.wrong-flash{
+    animation:wrongFlash .5s ease;
+}
+@keyframes wrongFlash{
+    0%,100%{ background:white; }
+    50%    { background:#ffe5e5; border-color:#E05252; }
+}
+
+/* ============================================
+   FEEDBACK + BUTTONS (inherits from planner)
+============================================= */
+.feedback{ top:72%; }
+.group-buttons{ top:80%; }
+
+/* Mika on this page is taller */
+.group-mika{
+    top:20%; left:2%;
+    width:240px;
+}
+.mika-img{ width:220px; }
+
+/* Cat lower down on this page */
+.group-cat{
+    top:68%; right:3%;
+    width:220px;
+}
+.cat-img{ width:200px; }

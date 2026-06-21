@@ -1,0 +1,147 @@
+/* styles_explain.css */
+@import url("styles_planner.css");
+
+/* ============================================
+   TITLE
+============================================= */
+.group-title{
+    top:5%; left:50%; transform:translateX(-50%);
+    width:700px; text-align:center;
+}
+.group-title h1{ font-size:2.5rem; font-weight:800; }
+.subtitle{ margin-top:12px; font-size:1.1rem; color:#555; }
+
+/* ============================================
+   MIKA
+============================================= */
+.group-mika{ top:24%; left:2%; width:260px; }
+.mika-img  { width:440px; margin-top:6px; }
+
+/* ============================================
+   SENTENCE WITH BLANKS
+============================================= */
+.group-sentence{
+    top:22%; left:50%; transform:translateX(-50%);
+    width:680px;
+}
+.sentence{
+    background:rgba(255,255,255,.993);
+    border-radius:20px;
+    padding:32px;
+    font-size:1.6rem;
+    line-height:2.4;
+    text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,.08);
+}
+
+.drop-slot{
+    display:inline-block;
+    min-width:140px; min-height:44px;
+    vertical-align:middle;
+    border-radius:10px;
+    border:2px dashed rgba(0,0,0,.25);
+    background:rgba(0,0,0,.04);
+    margin:0 4px;
+    transition:background .2s ease, border-color .2s ease;
+    font-weight:700;
+}
+.drop-slot.drag-over{ background:rgba(76,175,135,.15); border-color:#4CAF87; }
+.drop-slot.filled    { border-style:solid; background:none; }
+
+/* Tile inside slot — must be visible */
+.drop-slot .word-tile{
+    margin:0; width:100%; height:100%;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; color:#2c2c2c;
+}
+
+/* ============================================
+   WORD TILES
+============================================= */
+.group-tiles{
+    top:50%; left:50%; transform:translateX(-50%);
+    width:680px;
+    display:flex; flex-wrap:wrap;
+    justify-content:center; gap:16px;
+}
+
+.word-tile{
+    padding:12px 24px; border-radius:12px;
+    font-weight:700; font-size:1.1rem; text-align:center;
+    cursor:grab;
+    box-shadow:0 4px 10px rgba(0,0,0,.12);
+    transition:transform .15s ease, box-shadow .15s ease;
+    user-select:none; color:#2c2c2c;
+}
+.word-tile:active{ cursor:grabbing; }
+.tile-1          { background:#F2A28C; }
+.tile-2          { background:#8BD3C7; }
+.tile-3          { background:#A8B4F0; }
+.tile-4          { background:#F6D365; }
+.tile-distractor { background:#D6A8E0; }
+.word-tile.dragging{ opacity:.5; transform:scale(1.05); }
+
+/* Only hide in the tray, not inside a slot */
+.group-tiles .word-tile.placed{ display:none; }
+
+/* ============================================
+   TILE CASCADE ENTRANCE
+============================================= */
+.tile-enter{ opacity:0; transform:scale(.7) translateY(20px); }
+.tile-enter.show{
+    opacity:1; transform:scale(1) translateY(0);
+    transition:opacity .4s ease, transform .4s ease;
+}
+
+/* ============================================
+   FEEDBACK
+============================================= */
+.feedback{
+    position:absolute; top:68%; left:50%; transform:translateX(-50%);
+    font-size:1.2rem; font-weight:700; min-height:32px;
+    text-align:center; width:100%;
+}
+.feedback.correct  { color:#3a9e73; }
+.feedback.incorrect{ color:#E05252; }
+
+/* ============================================
+   BUTTONS (extends planner styles with hear + retry)
+============================================= */
+.group-buttons{
+    top:76%; left:50%; transform:translateX(-50%);
+    display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
+}
+.check-btn, .hear-btn, .retry-btn, .next-btn{
+    border:none; border-radius:14px;
+    padding:14px 24px; font-size:1rem; font-weight:700;
+    cursor:pointer; text-decoration:none;
+    transition:all .2s ease; display:inline-block;
+}
+.check-btn { background:#FF7748; color:white; }
+.check-btn:hover{ background:#e6663b; transform:translateY(-2px); }
+
+.hear-btn  { background:#8BD3C7; color:#1d2521; }
+.hear-btn:hover{ background:#6FBFB0; transform:translateY(-2px); }
+
+.retry-btn { background:#F6D365; color:#2c2c2c; }
+.retry-btn:hover{ background:#e0c050; transform:translateY(-2px); }
+
+.next-btn  { background:#6FA2F5; color:white; }
+.next-btn:hover{ background:#5a8de0; transform:translateY(-2px); }
+.next-btn.disabled{ background:#ccc; color:#888; cursor:not-allowed; pointer-events:none; }
+
+/* ============================================
+   PHEN
+============================================= */
+.group-cat{ top:28%; right:4%; width:240px; display:flex; flex-direction:column; align-items:center; }
+.cat-img  { width:220px; margin-top:12px; }
+
+/* ============================================
+   CENTERING OVERRIDES FOR .show STATE
+============================================= */
+.group-title.show,
+.group-sentence.show,
+.group-tiles.show,
+.group-buttons.show{
+    opacity:1; transform:translateX(-50%); transition:opacity .8s ease;
+}

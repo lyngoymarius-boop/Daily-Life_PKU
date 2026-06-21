@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Your Day — Daily Life PKU</title>
+    <link rel="stylesheet" href="styles_planner.css">
+</head>
+<body>
+
+    <img src="s_blub_svg.svg"  alt="" class="bg-shape bg-green">
+    <img src="s_blub_svg3.svg" alt="" class="bg-shape bg-green2">
+    <img src="cloud1.png" alt="" class="cloud cloud-1">
+    <img src="cloud2.png" alt="" class="cloud cloud-2">
+
+    <section class="game-section">
+
+        <div class="star star-1">★</div>
+        <div class="star star-2">★</div>
+        <div class="star star-3">★</div>
+        <div class="star star-4">★</div>
+        <div class="star star-5">★</div>
+        <div class="star star-6">★</div>
+        <div class="star star-7">★</div>
+        <div class="star star-8">★</div>
+        <div class="star star-9">★</div>
+
+        <!-- Mika — slides in first -->
+        <div class="group group-mika slide-left bob" data-delay="0">
+            <div class="speech green">
+                I love to start my day with my special bread with extra hazelnut spread on!
+            </div>
+            <img src="mika_eating.png" alt="Mika eating breakfast" class="mika-img">
+        </div>
+
+        <!-- Title — fades up second -->
+        <div class="group group-title fade-up" data-delay="300">
+            <h1>Wake up and order Mika's<br>morning in the correct sequence</h1>
+        </div>
+
+        <!-- Cards — cascade in third -->
+        <div class="group group-cards fade-up" data-delay="600">
+            <div class="task-card pack-bag"    draggable="true" data-task="pack-bag">Pack Bag</div>
+            <div class="task-card wake-up"     draggable="true" data-task="wake-up">Wake Up</div>
+            <div class="task-card formula"     draggable="true" data-task="formula">Formula</div>
+            <div class="task-card school"      draggable="true" data-task="school">School</div>
+            <div class="task-card brush-teeth" draggable="true" data-task="brush-teeth">Brush Teeth</div>
+        </div>
+
+        <!-- Slots — appear fourth -->
+        <div class="group group-slots fade-up" data-delay="900">
+            <div class="drop-slot" data-slot="1"></div>
+            <div class="drop-slot" data-slot="2"></div>
+            <div class="drop-slot" data-slot="3"></div>
+            <div class="drop-slot" data-slot="4"></div>
+            <div class="drop-slot" data-slot="5"></div>
+        </div>
+
+        <p class="feedback" id="feedback"></p>
+
+        <!-- Buttons — appear last -->
+        <div class="group group-buttons fade-up" data-delay="1100">
+            <button class="check-btn"  id="checkBtn">Check Order</button>
+            <button class="retry-btn"  id="retryBtn">Try Again</button>
+            <a href="a_find_bag.html"  class="next-btn disabled" id="nextBtn">Go To Next Page</a>
+        </div>
+
+        <!-- Phen — slides in from right -->
+        <div class="group group-cat slide-right bob" data-delay="500">
+            <div class="speech orange">Check Out This Offline PKU Planner Game</div>
+            <img src="phen_pointing.png" alt="" class="cat-img">
+        </div>
+
+        <div class="group group-clock">
+            <h2>07:30</h2>
+        </div>
+
+    </section>
+
+    <script src="script_planner.js"></script>
+</body>
+</html>

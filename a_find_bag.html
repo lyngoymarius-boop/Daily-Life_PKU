@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find The Bag — Daily Life PKU</title>
+    <link rel="stylesheet" href="styles_find-bag.css">
+</head>
+<body>
+
+    <img src="s_blub_svg.svg"  alt="" class="bg-shape bg-green">
+    <img src="s_blub_svg3.svg" alt="" class="bg-shape bg-green2">
+    <img src="cloud1.png" alt="" class="cloud cloud-1">
+    <img src="cloud2.png" alt="" class="cloud cloud-2">
+
+    <section class="game-section">
+
+        <div class="star star-1">★</div>
+        <div class="star star-2">★</div>
+        <div class="star star-3">★</div>
+        <div class="star star-4">★</div>
+        <div class="star star-5">★</div>
+        <div class="star star-6">★</div>
+        <div class="star star-7">★</div>
+        <div class="star star-8">★</div>
+        <div class="star star-9">★</div>
+
+        <!-- Mika -->
+        <div class="group group-mika slide-left bob" data-delay="0">
+            <div class="speech green">Oh no! I can't find my PKU bag! Can you help me?</div>
+            <img src="p_mika-thinking.png" alt="" class="mika-img">
+        </div>
+
+        <!-- Title -->
+        <div class="group group-title fade-up" data-delay="200">
+            <h1>Can You Find Mika's Bag?</h1>
+        </div>
+
+        <!-- Room scene -->
+        <div class="room-scene fade-up" data-delay="500">
+            <div class="item teddy">🧸</div>
+            <div class="item football">⚽</div>
+            <div class="item book">📚</div>
+            <div class="item apple">🍎</div>
+            <div class="item pencil">✏️</div>
+            <div class="item toy-car">🚗</div>
+            <div class="item headphones">🎧</div>
+            <div class="item bottle">🧃</div>
+            <div id="bag" class="item bag">🎒</div>
+        </div>
+
+        <p id="feedback" class="feedback"></p>
+
+        <div class="group group-buttons fade-up" data-delay="800">
+            <button id="hintBtn"  class="check-btn">Hint</button>
+            <button id="retryBtn" class="retry-btn">Try Again</button>
+            <a href="a_pack_bag.html" id="nextBtn" class="next-btn disabled">Continue</a>
+        </div>
+
+        <!-- Phen -->
+        <div class="group group-cat slide-right bob" data-delay="400">
+            <div class="speech orange">Look carefully! The bag might be hiding behind something!</div>
+            <img src="phen_pointing.png" alt="" class="cat-img">
+        </div>
+
+    </section>
+
+    <script src="script_find-bag.js"></script>
+</body>
+</html>

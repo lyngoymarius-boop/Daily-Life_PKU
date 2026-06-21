@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! — Daily Life PKU</title>
+    <link rel="stylesheet" href="styles_thankyou.css">
+</head>
+<body>
+
+    <img src="s_blub_svg.svg"  alt="" class="bg-shape bg-green">
+    <img src="s_blub_svg3.svg" alt="" class="bg-shape bg-green2">
+    <img src="cloud1.png" alt="" class="cloud cloud-1">
+    <img src="cloud2.png" alt="" class="cloud cloud-2">
+    <img src="Cloud3.png" alt="" class="cloud cloud-3">
+
+    <section class="thankyou-section">
+
+        <!-- Stars everywhere for a celebratory feel -->
+        <div class="star star-1">★</div>
+        <div class="star star-2">★</div>
+        <div class="star star-3">★</div>
+        <div class="star star-4">★</div>
+        <div class="star star-5">★</div>
+        <div class="star star-6">★</div>
+        <div class="star star-7">★</div>
+        <div class="star star-8">★</div>
+        <div class="star star-9">★</div>
+        <div class="star star-10">★</div>
+        <div class="star star-11">★</div>
+        <div class="star star-12">★</div>
+
+        <!-- Confetti burst on load -->
+        <div class="confetti-container" id="confettiContainer"></div>
+
+        <!-- Title — fades up first -->
+        <div class="group group-title fade-up" data-delay="0">
+            <h1>Well Done!</h1>
+            <p class="big-subtitle">You helped Mika get through his whole day! 🎉</p>
+        </div>
+
+        <!-- Mika — slides in from left, bobs -->
+        <div class="group group-mika slide-left bob" data-delay="400">
+            <div class="speech green">
+                Thank you so much for helping me today! I couldn't have done it without you!
+            </div>
+            <img src="mika_waving1.png" alt="Mika waving" class="mika-img">
+        </div>
+
+        <!-- Thank you text — fades up centre -->
+        <div class="group group-message fade-up" data-delay="700">
+            <div class="message-card">
+                <h2>What You Learned Today</h2>
+                <ul>
+                    <li>🌅 How Mika plans his morning</li>
+                    <li>🎒 What goes in a PKU bag</li>
+                    <li>🔍 How to spot Mika's PKU things</li>
+                    <li>💬 How to explain PKU to a friend</li>
+                </ul>
+                <p class="closing">
+                    Living with PKU means making smart choices every day —
+                    and Mika does it brilliantly. Now you know how too!
+                </p>
+            </div>
+        </div>
+
+        <!-- Phen — slides in from right, bobs -->
+        <div class="group group-cat slide-right bob" data-delay="400">
+            <div class="speech orange">
+                See you next time! Meow! 🐱
+            </div>
+            <img src="phen_sitting.png" alt="Phen waving" class="cat-img">
+        </div>
+
+        <!-- Back to start button -->
+        <div class="group group-buttons fade-up" data-delay="1000">
+            <a href="a_index.html" class="home-btn">⬅ Back to Start</a>
+        </div>
+
+    </section>
+
+    <script src="script_thankyou.js"></script>
+</body>
+</html>

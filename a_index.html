@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Life PKU</title>
+    <link rel="stylesheet" href="styles_main.css">
+</head>
+<body>
+
+    <img src="s_blub_svg.svg"  alt="" class="bg-shape bg-green">
+    <img src="s_blub_svg2.svg" alt="" class="bg-shape bg-green2">
+    <img src="s_blub_svg3.svg" alt="" class="bg-shape bg-blue">
+    <img src="bg-pink.svg"     alt="" class="bg-shape bg-pink">
+
+    <img src="cloud1.png"  alt="" class="cloud cloud-1">
+    <img src="cloud2.png"  alt="" class="cloud cloud-2">
+    <img src="Cloud3.png"  alt="" class="cloud cloud-3">
+
+    <!-- ======== HERO ======== -->
+    <section class="hero">
+
+        <img src="p_sun.png" alt="" class="sun">
+
+        <!-- Stars — more than before, scattered across both sections -->
+        <div class="star star-1">★</div>
+        <div class="star star-2">★</div>
+        <div class="star star-3">★</div>
+        <div class="star star-7">★</div>
+        <div class="star star-8">★</div>
+        <div class="star star-9">★</div>
+        <div class="star star-10">★</div>
+        <div class="star star-11">★</div>
+        <div class="star star-12">★</div>
+
+        <!-- MY DAY menu + Phen — slides in from left, first -->
+        <div class="group group-day-menu slide-left" data-delay="0">
+            <div class="day-menu">
+                <h3>MY DAY</h3>
+                <ul>
+                    <li>1 Waking Up!</li>
+                    <li>2 Breakfast</li>
+                    <li>3 School</li>
+                    <li>4 Formula</li>
+                    <li>5 Match</li>
+                    <li>6 Return</li>
+                </ul>
+            </div>
+            <img src="phen_sitting.png" alt="" class="phen-intro bob">
+        </div>
+
+        <!-- Title — fades up second -->
+        <div class="group group-title fade-up" data-delay="300">
+            <h1>MY<br>DAILY LIFE</h1>
+            <p>An Interactive Journey Through My Day!</p>
+            <button class="start-btn">Start Your Adventure</button>
+            <div class="scroll-indicator">↓</div>
+            <p class="scroll-text">Scroll down to explore!</p>
+        </div>
+
+        <!-- Mika — slides in from right, third -->
+        <div class="group group-mika slide-right bob" data-delay="600">
+            <div class="speech green">Hi! I'm Mika!</div>
+            <img src="mika_waving1.png" alt="Mika waving" class="mika-img">
+        </div>
+
+    </section>
+
+    <!-- ======== WAKEUP SCENE ======== -->
+    <section class="scene wakeup">
+
+        <div class="star star-4">★</div>
+        <div class="star star-5">★</div>
+        <div class="star star-6">★</div>
+
+        <!-- Phen — slides from left -->
+        <div class="group group-cat slide-left bob">
+            <div class="speech orange">Come on! You're late!</div>
+            <img src="phen_walking.png" alt="" class="cat-img">
+        </div>
+
+        <!-- Bed scene — fades up centre -->
+        <div class="group group-bed fade-up">
+            <div class="speech green">Today is going to be a big day!</div>
+            <img src="p_mika_bed.png" alt="" class="bed-img">
+            <a href="a_day_planner.html" class="start-btn">Plan Your Day</a>
+        </div>
+
+        <!-- Clock — slides from right -->
+        <div class="group group-clock slide-right">
+            <img src="Clock.png" alt="">
+            <h2>07:00</h2>
+        </div>
+
+    </section>
+
+    <script src="script_start.js"></script>
+</body>
+</html>

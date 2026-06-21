@@ -1,0 +1,208 @@
+/* ============================================
+   RESET
+============================================= */
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+body{
+    overflow-x:hidden;
+    font-family:Arial, sans-serif;
+    background:#ebe1c6;
+}
+
+/* ============================================
+   BACKGROUND SHAPES
+============================================= */
+.bg-shape{
+    position: fixed;
+    z-index: -2;
+    pointer-events: none;
+}
+.bg-green  { width:500px; top:-500px; left:-50px; }
+.bg-green2 { width:700px; top:1500px; left:-100px; }
+.bg-blue   { width:600px; top:-150px; right:-150px; }
+.bg-pink   { width:550px; bottom:-200px; right:-150px; }
+
+/* ============================================
+   SECTIONS
+============================================= */
+section{
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ============================================
+   GROUPS
+============================================= */
+.group{ position: absolute; }
+
+/* Day menu */
+.group-day-menu{
+    top:8%; left:4%;
+    width:220px;
+    text-align:center;
+}
+.day-menu{
+    background:#6fa2f5c8;
+    color:white;
+    padding:16px 24px;
+    border-radius:25px;
+}
+.day-menu ul{ list-style:none; text-align:left; }
+.day-menu li{ margin:8px 0; }
+.phen-intro{ width:180px; margin-top:20px; }
+
+/* Title */
+.group-title{
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:600px;
+    text-align:center;
+}
+.group-title h1{ font-size:6rem; font-weight:900; line-height:1.1; }
+.group-title p { margin-top:20px; font-size:1.5rem; }
+
+.start-btn{
+    margin-top:30px;
+    border:none; border-radius:14px;
+    background:#6FA2F5; color:white;
+    padding:18px 32px;
+    cursor:pointer; font-size:1.1rem;
+    transition:all 0.2s ease;
+    text-decoration:none;
+    display:inline-block;
+}
+.start-btn:hover{ background:#5a8de0; transform:translateY(-2px); }
+
+.scroll-indicator{ margin-top:40px; font-size:2rem; }
+.scroll-text{ margin-top:8px; font-size:1rem; color:#555; }
+
+/* Mika */
+.group-mika{
+    top:12%; right:4%;
+    width:300px;
+    display:flex; flex-direction:column; align-items:center;
+}
+.mika-img{ width:300px; margin-top:16px; }
+
+/* Wakeup: Phen */
+.group-cat{
+    top:35%; left:4%;
+    width:260px;
+    display:flex; flex-direction:column; align-items:center;
+}
+.cat-img{ width:250px; margin-top:16px; }
+
+/* Wakeup: Bed */
+.group-bed{
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:480px; text-align:center;
+}
+.bed-img{ width:450px; display:block; margin:16px auto; }
+
+/* Clock */
+.group-clock{ top:10%; right:6%; text-align:center; }
+.group-clock img{ width:120px; }
+.group-clock h2{ margin-top:8px; }
+
+/* ============================================
+   STARS — more positions for extra density
+============================================= */
+.star{
+    position:absolute;
+    font-size:4rem;
+    animation:starFloat 4s ease-in-out infinite;
+    z-index:-1;
+}
+@keyframes starFloat{
+    0%,100%{ transform:translateY(0) rotate(0deg); }
+    50%    { transform:translateY(-15px) rotate(15deg); }
+}
+
+/* Hero stars */
+.star-1  { top:5%;  right:8%;  color:#8B7FD6; animation-delay:0s; }
+.star-2  { top:12%; right:4%;  color:#D65F5F; animation-delay:-1.5s; }
+.star-3  { top:18%; right:14%; color:#F4C95D; animation-delay:-2.3s; }
+.star-7  { top:40%; left:2%;   color:#8B7FD6; animation-delay:-2s; }
+.star-8  { top:60%; right:6%;  color:#F4C95D; animation-delay:-0.4s; }
+.star-9  { bottom:35%; right:10%; color:#D65F5F; animation-delay:-1.8s; }
+/* Extra hero stars */
+.star-10 { top:8%;  left:30%;  color:#F4C95D; animation-delay:-0.9s; }
+.star-11 { top:25%; left:8%;   color:#D65F5F; animation-delay:-3.1s; }
+.star-12 { top:70%; left:15%;  color:#8B7FD6; animation-delay:-1.1s; }
+
+/* Wakeup stars */
+.star-4  { bottom:10%; left:4%;  color:#D65F5F; animation-delay:-0.7s; }
+.star-5  { bottom:18%; left:10%; color:#D65F5F; animation-delay:-3s; }
+.star-6  { bottom:4%;  left:14%; color:#F4C95D; animation-delay:-1.2s; }
+
+/* ============================================
+   SUN
+============================================= */
+.sun{
+    position:absolute;
+    top:3%; left:15%;
+    width:250px;
+    animation:sunSpin 30s linear infinite;
+    opacity:0.9; z-index:-1;
+}
+@keyframes sunSpin{
+    from{ transform:rotate(0deg); }
+    to  { transform:rotate(360deg); }
+}
+
+/* ============================================
+   SPEECH BUBBLES
+============================================= */
+.speech{
+    padding:16px 24px; border-radius:20px;
+    color:white; font-weight:bold;
+    margin-bottom:12px; display:inline-block;
+}
+.green  { background:#4FAE9C; }
+.orange { background:#FF7748; }
+
+/* ============================================
+   CLOUDS
+============================================= */
+.cloud{ position:fixed; width:350px; height:120px; z-index:-1; }
+.cloud-1{ top:10%; animation:floatCloud 50s linear infinite; }
+.cloud-2{ top:65%; animation:floatCloud 70s linear infinite; }
+.cloud-3{ top:40%; animation:floatCloud 30s linear infinite; }
+@keyframes floatCloud{
+    from{ transform:translateX(-500px); }
+    to  { transform:translateX(150vw); }
+}
+
+/* ============================================
+   BOB ANIMATION — gentle float for characters
+============================================= */
+.bob{
+    animation:bob 3s ease-in-out infinite;
+    animation-delay:1.5s;
+}
+@keyframes bob{
+    0%,100%{ transform:translateY(0); }
+    50%    { transform:translateY(-10px); }
+}
+
+/* ============================================
+   LOAD / SCROLL ANIMATIONS
+============================================= */
+.slide-left  { opacity:0; transform:translateX(-100px); }
+.slide-right { opacity:0; transform:translateX(100px); }
+.fade-up     { opacity:0; transform:translateY(60px); }
+
+.show{
+    opacity:1; transform:none;
+    transition:opacity 1s ease, transform 1s ease;
+}
+
+/* Centred groups must preserve their centering transform */
+.group-title.show,
+.group-bed.show{
+    opacity:1;
+    transform:translate(-50%,-50%);
+    transition:opacity 1s ease;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explain It! — Daily Life PKU</title>
+    <link rel="stylesheet" href="styles_explain.css">
+</head>
+<body>
+
+    <img src="s_blub_svg.svg"  alt="" class="bg-shape bg-green">
+    <img src="s_blub_svg3.svg" alt="" class="bg-shape bg-green2">
+    <img src="cloud1.png"  alt="" class="cloud cloud-1">
+    <img src="Cloud3.png"  alt="" class="cloud cloud-3">
+
+    <section class="game-section">
+
+        <div class="star star-1">★</div>
+        <div class="star star-2">★</div>
+        <div class="star star-3">★</div>
+        <div class="star star-4">★</div>
+        <div class="star star-5">★</div>
+        <div class="star star-6">★</div>
+        <div class="star star-7">★</div>
+        <div class="star star-8">★</div>
+        <div class="star star-9">★</div>
+
+        <!-- Title — first -->
+        <div class="group group-title fade-up" data-delay="0">
+            <h1>Help Mika finish his sentence!</h1>
+            <p class="subtitle">Drag the missing words into the sentence so Mika can explain PKU to a friend.</p>
+        </div>
+
+        <!-- Mika — second, bobs gently -->
+        <div class="group group-mika slide-left bob" data-delay="200">
+            <div class="speech green">I want to explain PKU simply. Can you help me find the right words?</div>
+            <img src="p_mika-thinking.png" alt="Mika thinking" class="mika-img">
+        </div>
+
+        <!-- Sentence — third -->
+        <div class="group group-sentence fade-up" data-delay="500">
+            <p class="sentence">
+                I have PKU, so I have to be careful with
+                <span class="drop-slot blank-1" data-answer="protein"></span>.
+                I eat
+                <span class="drop-slot blank-2" data-answer="special-foods"></span>
+                and drink
+                <span class="drop-slot blank-3" data-answer="special-formula"></span>
+                to keep my body
+                <span class="drop-slot blank-4" data-answer="healthy-strong"></span>.
+            </p>
+        </div>
+
+        <!-- Word tiles — cascade in -->
+        <div class="group group-tiles">
+            <div class="word-tile tile-1 tile-enter"          draggable="true" data-word="protein">protein</div>
+            <div class="word-tile tile-2 tile-enter"          draggable="true" data-word="special-foods">special foods</div>
+            <div class="word-tile tile-3 tile-enter"          draggable="true" data-word="special-formula">a special formula</div>
+            <div class="word-tile tile-4 tile-enter"          draggable="true" data-word="healthy-strong">healthy and strong</div>
+            <div class="word-tile tile-distractor tile-enter" draggable="true" data-word="chocolate">chocolate</div>
+            <div class="word-tile tile-distractor tile-enter" draggable="true" data-word="tired-weak">tired and weak</div>
+        </div>
+
+        <p class="feedback" id="feedback"></p>
+
+        <!-- Buttons — appear after tiles -->
+        <div class="group group-buttons fade-up" data-delay="1600">
+            <button class="check-btn" id="checkBtn">Check Sentence</button>
+            <button class="hear-btn"  id="hearBtn">🔊 Hear It</button>
+            <button class="retry-btn" id="retryBtn">Try Again</button>
+            <a href="a_thankyou.html" class="next-btn disabled" id="nextBtn">Finish!</a>
+        </div>
+
+        <!-- Phen — last, bobs gently -->
+        <div class="group group-cat slide-right bob" data-delay="2000">
+            <div class="speech orange">You can say this anytime someone asks!</div>
+            <img src="phen_sitting.png" alt="" class="cat-img">
+        </div>
+
+    </section>
+
+    <script src="script_explain.js"></script>
+</body>
+</html>
