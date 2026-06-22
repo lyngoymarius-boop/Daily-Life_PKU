@@ -35,54 +35,84 @@
 }
 
 .drop-slot{
-    display:inline-block;
-    min-width:140px; min-height:44px;
-    vertical-align:middle;
-    border-radius:10px;
-    border:2px dashed rgba(0,0,0,.25);
-    background:rgba(0,0,0,.04);
-    margin:0 4px;
-    transition:background .2s ease, border-color .2s ease;
-    font-weight:700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 40px;
+    vertical-align: middle;
+    border-radius: 10px;
+    border: 2px dashed rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.04);
+    margin: 0 4px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+    overflow: hidden;
 }
+
 .drop-slot.drag-over{ background:rgba(76,175,135,.15); border-color:#4CAF87; }
 .drop-slot.filled    { border-style:solid; background:none; }
 
-/* Tile inside slot — must be visible */
+/* Tile inside a slot — constrained to slot size */
 .drop-slot .word-tile{
-    margin:0; width:100%; height:100%;
-    display:flex; align-items:center; justify-content:center;
-    font-weight:700; color:#2c2c2c;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #2c2c2c;
+    border-radius: 8px;
+    box-shadow: none;
+    cursor: default;
 }
 
 /* ============================================
-   WORD TILES
+   WORD TILES TRAY
 ============================================= */
 .group-tiles{
-    top:50%; left:50%; transform:translateX(-50%);
-    width:680px;
-    display:flex; flex-wrap:wrap;
-    justify-content:center; gap:16px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 680px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
 
+/* Base tile — full styling for tiles in the tray */
 .word-tile{
-    padding:12px 24px; border-radius:12px;
-    font-weight:700; font-size:1.1rem; text-align:center;
-    cursor:grab;
-    box-shadow:0 4px 10px rgba(0,0,0,.12);
-    transition:transform .15s ease, box-shadow .15s ease;
-    user-select:none; color:#2c2c2c;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    cursor: grab;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    user-select: none;
+    color: #2c2c2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .word-tile:active{ cursor:grabbing; }
+
+/* Hide placed tiles but keep their grid cell */
+.group-tiles .word-tile.placed{
+    visibility: hidden;
+    pointer-events: none;
+}
+
 .tile-1          { background:#F2A28C; }
 .tile-2          { background:#8BD3C7; }
 .tile-3          { background:#A8B4F0; }
 .tile-4          { background:#F6D365; }
 .tile-distractor { background:#D6A8E0; }
 .word-tile.dragging{ opacity:.5; transform:scale(1.05); }
-
-/* Only hide in the tray, not inside a slot */
-.group-tiles .word-tile.placed{ display:none; }
 
 /* ============================================
    TILE CASCADE ENTRANCE
@@ -105,7 +135,7 @@
 .feedback.incorrect{ color:#E05252; }
 
 /* ============================================
-   BUTTONS (extends planner styles with hear + retry)
+   BUTTONS
 ============================================= */
 .group-buttons{
     top:76%; left:50%; transform:translateX(-50%);
